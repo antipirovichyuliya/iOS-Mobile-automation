@@ -1,8 +1,8 @@
-import {lu} from '../../elementsUtils/locators.util.js';
+import {lu} from "../../elementsUtils/locators.util.js";
 
 class NavigationBar {
 
-    get root () { return $(lu.predicateStrings({type: 'XCUIElementTypeNavigationBar'})); };
+    get root () { return $(lu.byTypeAndName({type: "XCUIElementTypeNavigationBar"})); };
     get addBtn () { return $("~Add"); };
 
     

@@ -1,13 +1,13 @@
-import {lu} from '../../elementsUtils/locators.util.js';
-import {utils} from '../../elementsUtils/elements.util';
-import TaskList from './taskList.js';
+import {lu} from "../../elementsUtils/locators.util.js";
+import {utils} from "../../elementsUtils/elements.util";
+import TaskList from "./taskList.js";
 
 class Collection {
 
-    componentName = 'Tasks lists collection';
-    tasksTitle = '//XCUIElementTypeOther//XCUIElementTypeStaticText';
+    componentName = "Tasks lists collection";
+    tasksTitle = "//XCUIElementTypeOther//XCUIElementTypeStaticText";
 
-    get root () { return $(lu.predicateStrings({type: 'XCUIElementTypeCollectionView'})); };
+    get root () { return $(lu.byTypeAndName({type: "XCUIElementTypeCollectionView"})); };
     get tasksList () { return this.root.$$(`//XCUIElementTypeTable${this.tasksTitle}`); };
 
 
@@ -19,7 +19,7 @@ class Collection {
 
     findTaskList (listName) {
 
-        const [foundList] = this.root.$$('//XCUIElementTypeTable')
+        const [foundList] = this.root.$$("//XCUIElementTypeTable")
             .filter((taskElement) => utils.getElementsText(this.componentName, taskElement.$$(this.tasksTitle))[0] === listName);
 
         return new TaskList(listName, foundList);

@@ -9,17 +9,17 @@ class LocatorsUtils {
 
     byType (type) {
 
-        return `-ios predicate string: type == '${type}'`;
+        return `-ios predicate string: type == "${type}"`;
 
     };
 
-    predicateStrings ({type, name}) {
+    byTypeAndName ({type, name}) {
 
-        let selector = `type == '${type}'`;
+        let selector = `type == "${type}"`;
 
         if (name) {
 
-            selector = `${selector} && name CONTAINS '${name}'`;
+            selector = `${selector} && name CONTAINS "${name}"`;
 
         }
 

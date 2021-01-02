@@ -1,3 +1,4 @@
+const reporter = require("wdio-allure-reporter");
 
 /**
  * more information: https://webdriver.io/docs/configurationfile.html
@@ -6,47 +7,48 @@
 
 exports.config = {
 
-    runner: 'local',
+    runner: "local",
 
     // Patterns to exclude.    
     exclude: [
-        // 'path/to/excluded/files'
+        // "path/to/excluded/files"
     ], 
 
-    framework: 'jasmine',
+    framework: "jasmine",
     jasmineNodeOpts: {
-        defaultTimeoutInterval: 90000,
-        helpers: [require.resolve('@babel/register')],
+        defaultTimeoutInterval: 180000,
+        helpers: [require.resolve("@babel/register")],
     },
 
     sync: true,
-    logLevel: 'silent',
+    logLevel: "silent",
     deprecationWarnings: true,
     bail: 0,
     waitforTimeout: 10000,
-    connectionRetryTimeout: 90000,
-    connectionRetryCount: 2,
+    connectionRetryTimeout: 180000,
+    connectionRetryCount: 3,
 
     // more info: https://webdriver.io/docs/allure-reporter.html#configuration
     reporters: [ 
         [
-            'allure',
+            "allure",
             {
-                outputDir: './temp/allure-results',
+                outputDir: "./temp/allure-results",
                 disableWebdriverStepsReporting: false,
                 disableWebdriverScreenshotsReporting: false
             }
         ]
     ],
 
-    services: ['appium'],
-    path: '/wd/hub',
+    services: ["appium"],
+    path: "/wd/hub",
     port: 4723,
 
-    afterStep: function (test, context, { error, result, duration, passed, retries }) {
-        
-        browser.takeScreenshot();
+    afterTest: function (test, context, result) {
 
+        const screen = browser.takeScreenshot();
+        reporter.createAttachment("Screenshot", () => new Buffer(screen, "base64", "image/png"));
+        
       }
 
 };

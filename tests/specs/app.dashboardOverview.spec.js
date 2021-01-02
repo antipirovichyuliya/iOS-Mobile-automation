@@ -1,39 +1,37 @@
-import dashboard from '../screenobjects/dashboard.screen.js';
+import dashboard from "../screenobjects/dashboard.screen.js";
 
-describe('Application is opened, dashboard screen overview', () => {
+describe("Application is opened, dashboard screen overview", () => {
   
-    beforeEach(() => {
+    beforeEach(() => {});
+
+    it("Navigation bar text is Kanban Drag & Drop", () => {
+
+        expect(dashboard.navigationBar.getNavigationBarText()).toEqual("Kanban Drag & Drop");
        
     });
 
-    it('Navigation bar text is Kanban Drag & Drop', () => {
+    it("Collection: 2 tasks lists are visible", () => {
 
-        expect(dashboard.navigationBar.getNavigationBarText()).toEqual('Kanban Drag & Drop');
+        expect(dashboard.collection.getTasksListsNames()).toEqual(["Todo", "In Progress"]);
        
     });
 
-    it('Collection: 2 tasks lists are visible', () => {
+    it("Collection: Tasks List Todo - tasks names", () => {
 
-        expect(dashboard.collection.getTasksListsNames()).toEqual(['Todo', 'In Progress' ]);
-       
-    });
-
-    it('Collection: Tasks List Todo - tasks names', () => {
-
-        const toDoList = dashboard.collection.findTaskList('Todo');
+        const toDoList = dashboard.collection.findTaskList("Todo");
 
         expect(toDoList.getTasksNames()).toEqual([
-              'Database Migration',
-              'Schema Design', 
-              'Storage Management', 
-              'Model Abstraction'
+              "Database Migration",
+              "Schema Design", 
+              "Storage Management", 
+              "Model Abstraction"
             ]);
        
     });
 
-    it('Collection: Tasks List In progress - tasks names', () => {
+    it("Collection: Tasks List In progress - tasks names", () => {
 
-        const inProgressList = dashboard.collection.findTaskList('In Progress');
+        const inProgressList = dashboard.collection.findTaskList("In Progress");
 
         expect(inProgressList.getTasksNames()).toEqual([
             "Push Notification",
@@ -43,11 +41,11 @@ describe('Application is opened, dashboard screen overview', () => {
        
     });
 
-    it('Collection: Swipe to Done list, check its tasks names', () => {
+    it("Collection: Swipe to Done list, check its tasks names", () => {
 
         dashboard.collection.swipeLeft();
 
-        const doneList = dashboard.collection.findTaskList('Done');
+        const doneList = dashboard.collection.findTaskList("Done");
 
         expect(doneList.getTasksNames()).toEqual([
             "System Architecture", 
@@ -56,9 +54,9 @@ describe('Application is opened, dashboard screen overview', () => {
        
     });
 
-    it('Collection: 3 tasks lists are visible', () => {
+    it("Collection: In Progress&Done tasks lists are visible", () => {
 
-        expect(dashboard.collection.getTasksListsNames()).toEqual(['Todo', 'In Progress', 'Done' ]);
+        expect(dashboard.collection.getTasksListsNames()).toEqual(["In Progress", "Done"]);
        
     });
 

@@ -1,5 +1,7 @@
 let SCREEN_SIZE;
 /**
+ * !!! This code taken from boilerplate project
+ * 
  * The values in the below object are percentages of the screen
  */
 const SWIPE_DIRECTION = {
@@ -35,7 +37,7 @@ class Gestures {
             this.swipeUp(0.85);
             this.checkIfDisplayedWithScrollDown(element, maxScrolls, amount + 1);
         } else if (amount > maxScrolls) {
-            throw new Error(`The element '${element}' could not be found or is not visible.`);
+            throw new Error(`The element "${element}" could not be found or is not visible.`);
         }
     }
 
@@ -126,16 +128,16 @@ class Gestures {
      */
     static swipe (from, to) {
         driver.touchPerform([{
-            action: 'press',
+            action: "press",
             options: from,
         }, {
-            action: 'wait',
+            action: "wait",
             options: { ms: 1000 },
         }, {
-            action: 'moveTo',
+            action: "moveTo",
             options: to,
         }, {
-            action: 'release',
+            action: "release",
         }]);
         driver.pause(1000);
     }

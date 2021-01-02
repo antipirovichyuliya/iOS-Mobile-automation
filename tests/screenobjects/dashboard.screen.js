@@ -1,5 +1,5 @@
-import NavigationBar from './components/navigationBar.js';
-import Collection from './components/collection.js';
+import NavigationBar from "./components/navigationBar.js";
+import Collection from "./components/collection.js";
 
 class DashboardScreen {
 

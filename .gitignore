@@ -16,5 +16,9 @@ apps/
 *.log
 chromeDriver
 
+# report
+allure-report/
+temp/
+
 
 package-lock.json

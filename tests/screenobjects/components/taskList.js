@@ -1,5 +1,5 @@
-import {lu} from '../../elementsUtils/locators.util.js';
-import {utils} from '../../elementsUtils/elements.util';
+import {lu} from "../../elementsUtils/locators.util.js";
+import {utils} from "../../elementsUtils/elements.util";
 
 class TaskList {
 
@@ -8,14 +8,14 @@ class TaskList {
 
     constructor (name, root) {
 
-        this.componentName = `Task list '${name}'`;
+        this.componentName = `Task list "${name}"`;
         this.root = root;
 
     };
 
 
-    get addBtn () { return this.root.$(lu.byType('XCUIElementTypeButton')); };
-    get tasks () { return this.root.$$('//XCUIElementTypeCell//XCUIElementTypeStaticText'); };
+    get addBtn () { return this.root.$(lu.byType("XCUIElementTypeButton")); };
+    get tasks () { return this.root.$$("//XCUIElementTypeCell//XCUIElementTypeStaticText"); };
 
     
     isAddBtnDisplayed () {
