@@ -1,7 +1,7 @@
 // WebdriverIO mobile actions: http://v4.webdriver.io/api/mobile/background.html 
 
 import { isArray } from "util";
-import { configUtils } from "./config.util";
+const { configUtils } = require("./config.util");
 import Gestures from "./gestures.js";
 
 class ElementsUtils {

@@ -1,6 +1,6 @@
 const { join } = require("path");
 const { config } = require("./wdio.shared.conf");
-
+const { configUtils } = require("./../tests/elementsUtils/config.util");
 
 config.specs = [
     "./tests/specs/**/app*.spec.js",
@@ -11,10 +11,10 @@ config.specs = [
 config.capabilities = [{
     appiumVersion: "1.18.3",
     platformName: "iOS",
-    "appium:deviceName": "iPhone 7",
+    "appium:deviceName": configUtils.deviceName,
     "appium:platformVersion": "12.1",
     "appium:automationName": "XCUITest",
-    "appium:udid": "D5EE24AA-640B-4002-8D0C-EA52EEF29163",
+    "appium:udid": configUtils.udid,
     "appium:app": join(process.cwd(), "./apps/DragAndDrop.app"),
     "appium:noReset": true,
     "appium:newCommandTimeout": 240,
