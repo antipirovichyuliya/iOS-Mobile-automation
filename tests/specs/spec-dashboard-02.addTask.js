@@ -1,10 +1,15 @@
 import dashboard from "../screenobjects/dashboard.screen.js";
 import Task from "../models/task.js";
+import {listsTasks} from "../appData/listsTasks";
+import {taskStatuses} from "../enums/taskStatuses";
 import AddModal from "../screenobjects/components/addModal";
 
 describe("Adding new task", () => {
   
-    const task = new Task({name: "Check Todo list"});
+    const task = new Task({
+        name: "Check Todo list",
+        listName: taskStatuses.toDo
+     });
     const addModal = new AddModal("Add task modal");
     let taskList;
 
@@ -32,5 +37,13 @@ describe("Adding new task", () => {
        
     });
 
+    it("Corresponding tasks' list contains newly created task", () => {
+
+        expect(taskList.getTasksNames()).toEqual([
+            ...listsTasks[task.getListName()],
+            task.getName()
+        ]);
+       
+    });
 
 });

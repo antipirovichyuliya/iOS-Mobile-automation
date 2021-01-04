@@ -20,6 +20,7 @@ exports.config = {
         helpers: [require.resolve("@babel/register")],
     },
 
+    maxInstances: 1,
     sync: true,
     logLevel: "silent",
     deprecationWarnings: true,
