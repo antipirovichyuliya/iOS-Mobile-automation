@@ -16,7 +16,7 @@ Xcode (for application building and simulators)
 3. Appium installed (checked by appium-doctor)
 4. Xcode installed
 5. Command line tool xcrun available (Xcode -> menu at the top -> Preferences -> Locations tab 
--> select Command Line Tools (for instance, Xcode 10.3 (10GB)))
+-> select Command Line Tools (for instance, Xcode 10.3))
 6. Open source iOS application code or ready build (file.app)
 
 ## Setup
