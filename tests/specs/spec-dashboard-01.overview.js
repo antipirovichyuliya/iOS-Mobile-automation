@@ -3,7 +3,7 @@ import {listsTasks} from "../appData/listsTasks";
 import {taskStatuses} from "../enums/taskStatuses";
 
 describe("Application is opened, dashboard screen overview", () => {
-    
+
     it("Navigation bar text is Kanban Drag & Drop", () => {
 
         expect(dashboard.navigationBar.getNavigationBarText()).toEqual("Kanban Drag & Drop");
@@ -48,7 +48,6 @@ describe("Application is opened, dashboard screen overview", () => {
     it("Collection: Done tasks list is visible", () => {
 
         expect(dashboard.collection.getTasksListsNames()).toEqual([
-            taskStatuses.toDo, 
             taskStatuses.inProgress,
             taskStatuses.done
         ]);
