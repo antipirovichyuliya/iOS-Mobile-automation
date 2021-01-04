@@ -1,6 +1,6 @@
-# iOS Mobile automation
+## iOS Mobile automation
 
-using
+using:
 ```
 appium (XCUITest)
 webdriverIO
@@ -15,7 +15,7 @@ Xcode (for application building and simulators)
 2. JAVA and Android (sdk) installed, JAVA_HOME and ANDROID_HOME environment variables set
 3. Appium installed (checked by appium-doctor)
 4. Xcode installed
-5. command line tool xcrun available (Xcode -> menu at the top -> Preferences -> Locations tab 
+5. Command line tool xcrun available (Xcode -> menu at the top -> Preferences -> Locations tab 
 -> select Command Line Tools (for instance, Xcode 10.3 (10GB)))
 6. Open source iOS application code or ready build (file.app)
 
@@ -26,7 +26,8 @@ npm install
 
 ## Run tests
 
-Xcode sumulator (iPhone 7, iPhone Plus 7, iPhone XR) and Appium server should be started
+Xcode sumulator (iPhone 7 (by default), iPhone Plus 7 or iPhone XR) 
+and Appium server should be started
 
 ```
 npm run test
