@@ -3,9 +3,7 @@ import {listsTasks} from "../appData/listsTasks";
 import {taskStatuses} from "../enums/taskStatuses";
 
 describe("Application is opened, dashboard screen overview", () => {
-  
-    beforeEach(() => {});
-
+    
     it("Navigation bar text is Kanban Drag & Drop", () => {
 
         expect(dashboard.navigationBar.getNavigationBarText()).toEqual("Kanban Drag & Drop");
