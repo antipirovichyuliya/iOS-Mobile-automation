@@ -34,6 +34,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.2",
     "eslint-plugin-wdio": "^6.6.0",
+    "faker": "^5.1.0",
     "http-server": "^0.12.1",
     "logger": "0.0.1",
     "node-fetch": "^2.6.1",

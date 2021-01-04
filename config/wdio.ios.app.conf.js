@@ -1,9 +1,9 @@
 const { join } = require("path");
 const { config } = require("./wdio.shared.conf");
-const { configUtils } = require("./../tests/elementsUtils/config.util");
+const { configUtils } = require("./../tests/utils/config.util");
 
 config.specs = [
-    "./tests/specs/**/app*.spec.js",
+    "./tests/specs/**/spec-*.js",
 ];
 
 

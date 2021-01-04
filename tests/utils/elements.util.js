@@ -6,6 +6,14 @@ import Gestures from "./gestures.js";
 
 class ElementsUtils {
 
+    clickOn (componentName, elementToClick) {
+
+        configUtils.logger.info(`Click on ${componentName}`);
+
+        return elementToClick.click();
+
+    };
+
     getElementsText (componentName, elements) {
 
         try {

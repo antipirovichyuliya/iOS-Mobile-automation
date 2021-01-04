@@ -19,7 +19,7 @@ class LocatorsUtils {
 
         if (name) {
 
-            selector = `${selector} && name CONTAINS "${name}"`;
+            selector = `${selector} && name == "${name}"`;
 
         }
 

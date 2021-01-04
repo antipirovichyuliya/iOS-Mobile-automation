@@ -1,5 +1,5 @@
-import {lu} from "../../elementsUtils/locators.util.js";
-import {utils} from "../../elementsUtils/elements.util";
+import {lu} from "../../utils/locators.util.js";
+import {utils} from "../../utils/elements.util";
 import TaskList from "./taskList.js";
 
 class Collection {

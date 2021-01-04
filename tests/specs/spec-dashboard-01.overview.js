@@ -54,9 +54,13 @@ describe("Application is opened, dashboard screen overview", () => {
        
     });
 
-    it("Collection: In Progress&Done tasks lists are visible", () => {
+    it("Collection: Done tasks list is visible", () => {
 
-        expect(dashboard.collection.getTasksListsNames()).toEqual(["In Progress", "Done"]);
+        expect(dashboard.collection.getTasksListsNames()).toEqual([
+            "Todo",
+             "In Progress", 
+             "Done"
+            ]);
        
     });
 

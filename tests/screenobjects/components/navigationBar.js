@@ -1,4 +1,4 @@
-import {lu} from "../../elementsUtils/locators.util.js";
+import {lu} from "../../utils/locators.util.js";
 
 class NavigationBar {
 
