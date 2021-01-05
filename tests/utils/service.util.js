@@ -9,8 +9,7 @@ class ServiceUtils {
 
         return valuesArray[randomIndex];
 
-    }
-     
+    }     
 
 };
 

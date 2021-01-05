@@ -26,11 +26,13 @@ npm install
 
 ## Run tests
 
-Xcode sumulator (iPhone 7)
+Xcode sumulator (iPhone 7 (default) / iPhone Plus 7 / iPhone XR)
 and Appium server should be started
 
 ```
 npm run test
+
+npm run test spec=dashboard-01 device=iPhone_7
 ```
 
 ## Reporting
